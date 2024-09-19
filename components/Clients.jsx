@@ -9,16 +9,8 @@ import Springfield from "@/public/springfield-white-logo.png"
 import Christeyns from "@/public/christeyns-logo-white.png"
 
 const Clients = () => {
-    const textureStyle = {
-        backgroundImage: `radial-gradient(#fff 1px, transparent 1px)`,
-        backgroundSize: '20px 20px',
-    };
-
     return (
-        <section className="bg-[#3A51ED] py-20 relative">
-            {/* Texture overlay */}
-            <div className="absolute inset-0 opacity-10" style={textureStyle}></div>
-            
+        <section className="bg-gradient-to-l from-luke-dark-blue to-luke-light-blue py-20 relative">
             <div className="container mx-auto flex flex-col items-center relative z-10">
                 <h2 className="text-4xl font-bold mb-10 text-center text-white">Clients Worked With</h2>
                 <div className="flex flex-wrap justify-center items-center gap-10">

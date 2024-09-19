@@ -29,22 +29,18 @@ const workExperience = [
 
 const Work = () => {
     return (
-        <section id="work" className="scroll-mt-40 relative overflow-hidden">
+        <section id="work" className="scroll-mt-40">
             <div className="absolute inset-0 z-0">
-                <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <circle cx="90" cy="10" r="30" fill="#3A51ED" fillOpacity="0.05" />
-                    <circle cx="5" cy="70" r="15" fill="#FF6B6B" fillOpacity="0.1" />
-                </svg>
             </div>
             <div className="container mx-auto my-20 px-10 lg:px-32 relative z-10">
-                <h2 className="text-4xl font-bold mb-10 text-center text-[#3A51ED]">Work Experience</h2>
-                <ol className="relative border-s border-[#9966fe]">
+                <h2 className="text-4xl font-bold mb-10 text-center text-luke-light-blue">Work Experience</h2>
+                <ol className="max-w-[90%] mx-auto relative border-s border-luke-light-blue text-luke-dark-blue">
                     {workExperience.map((job, index) => (
                         <li key={index} className="mb-10 ms-4">
-                            <div className="absolute w-3 h-3 bg-[#FF6B6B] rounded-full mt-1.5 -start-1.5 border border-[#FF6B6B]"></div>
-                            <h3 className="text-lg font-semibold text-[#3A51ED]">{job.title} - {job.company}</h3>
-                            <time className="mb-1 text-sm font-light leading-none">{job.period}</time>
-                            <p className="mb-4 mt-4 text-base font-normal">{job.description}</p>
+                            <div className="absolute w-3 h-3 bg-luke-green rounded-full mt-1.5 -start-1.5 border border-luke-green"></div>
+                            <h3 className="text-lg font-semibold text-luke-light-blue">{job.title} - {job.company}</h3>
+                            <time className="mb-1 text-sm text-luke-green">{job.period}</time>
+                            <p className="mb-4 mt-4">{job.description}</p>
                         </li>
                     ))}
                 </ol>
