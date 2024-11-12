@@ -1,15 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #082d47;
   background: #fffffe;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+.slick-prev,
+.slick-next {
+  color: white !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+}
+
+.custom-dots {
+  bottom: -40px !important;
+}
+
+.custom-dots li button:before {
+  color: white !important;
+  font-size: 10px !important;
 }
