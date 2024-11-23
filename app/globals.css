@@ -5,34 +5,34 @@
 @tailwind utilities;
 
 body {
-  font-family: "Poppins", sans-serif;
-  color: #082d47;
-  background: #fffffe;
+	font-family: "Poppins", sans-serif;
+	color: #082d47;
+	background: #fffffe;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 .slick-prev,
 .slick-next {
-  color: white !important;
+	color: white !important;
 }
 
 .slick-prev:before,
 .slick-next:before {
-  color: white !important;
+	color: white !important;
 }
 
 .slick-dots li button:before {
-  color: white !important;
+	color: white !important;
 }
 
 .custom-dots {
-  bottom: -40px !important;
+	bottom: -40px !important;
 }
 
 .custom-dots li button:before {
-  color: white !important;
-  font-size: 10px !important;
+	color: white !important;
+	font-size: 10px !important;
 }
