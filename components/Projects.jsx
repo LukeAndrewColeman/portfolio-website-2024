@@ -10,15 +10,6 @@ import { Github, ExternalLink } from "lucide-react";
 const Projects = () => {
 	const projects = [
 		{
-			title: "Recipe Hub",
-			description:
-				"Recipe Hub is a website that provides a way of organising all your recipes, which can be filtered and organised by cuisine. The website is hosted on a shared sever.",
-			image: recipeImage,
-			technologies: ["Craft CMS", "JavaScript", "Twig", "Tailwind"],
-			link: "https://recipeapp.lukeacoleman.com/",
-			github: "https://github.com/LukeAndrewColeman/recipeapp",
-		},
-		{
 			title: "Code Snippets",
 			description:
 				"Code Snippets is a website that provides a way of organising all your code snippets for various programming languages. The website is hosted on a vps with coolify and has a MySQL database.",
@@ -26,6 +17,15 @@ const Projects = () => {
 			technologies: ["NextJS", "Tailwind", "Prisma", "MySQL"],
 			link: "https://codesnippets.lukeacoleman.com/",
 			github: "https://github.com/LukeAndrewColeman/code-snippets-nextjs",
+		},
+		{
+			title: "Recipe Hub",
+			description:
+				"Recipe Hub is a website that provides a way of organising all your recipes, which can be filtered and organised by cuisine. The website is hosted on a shared sever.",
+			image: recipeImage,
+			technologies: ["Craft CMS", "JavaScript", "Twig", "Tailwind"],
+			link: "https://recipeapp.lukeacoleman.com/",
+			github: "https://github.com/LukeAndrewColeman/recipeapp",
 		},
 		{
 			title: "Todo App",

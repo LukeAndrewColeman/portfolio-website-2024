@@ -48,54 +48,56 @@ const Clients = () => {
 	};
 
 	return (
-		<section className="container mx-auto rounded-xl bg-gradient-to-l from-luke-dark-blue to-luke-light-blue py-20 relative">
-			<div className="flex flex-col items-center relative z-10">
-				<h2 className="text-4xl font-bold mb-10 text-center text-white">
-					Clients Worked With
-				</h2>
-				<div className="w-full max-w-4xl px-10">
-					<Slider {...settings}>
-						<div className="px-4">
-							<Image
-								src={Arrow}
-								alt="Arrow"
-								height={20}
-								className="mx-auto"
-							/>
-						</div>
-						<div className="px-4">
-							<Image
-								src={Alveo}
-								alt="Alveo"
-								height={30}
-								className="mx-auto"
-							/>
-						</div>
-						<div className="px-4">
-							<Image
-								src={Ugp}
-								alt="UGP"
-								height={40}
-								className="mx-auto"
-							/>
-						</div>
-						<div className="px-4">
-							<Image
-								src={Springfield}
-								alt="Springfield"
-								height={40}
-								className="mx-auto"
-							/>
-						</div>
-						<div className="px-4">
-							<Image
-								src={Christeyns}
-								alt="Christeyns"
-								height={30}
-								className="mx-auto"
-							/>
-						</div>
-					</Slider>
+		<section className="px-4 md:px-0">
+			<div className="container mx-auto rounded-xl bg-gradient-to-l from-luke-dark-blue to-luke-light-blue py-20 relative">
+				<div className="flex flex-col items-center relative z-10">
+					<h2 className="text-4xl font-bold mb-10 text-center text-white">
+						Clients Worked With
+					</h2>
+					<div className="w-full max-w-4xl px-10">
+						<Slider {...settings}>
+							<div className="px-4">
+								<Image
+									src={Arrow}
+									alt="Arrow"
+									height={20}
+									className="mx-auto"
+								/>
+							</div>
+							<div className="px-4">
+								<Image
+									src={Alveo}
+									alt="Alveo"
+									height={30}
+									className="mx-auto"
+								/>
+							</div>
+							<div className="px-4">
+								<Image
+									src={Ugp}
+									alt="UGP"
+									height={40}
+									className="mx-auto"
+								/>
+							</div>
+							<div className="px-4">
+								<Image
+									src={Springfield}
+									alt="Springfield"
+									height={40}
+									className="mx-auto"
+								/>
+							</div>
+							<div className="px-4">
+								<Image
+									src={Christeyns}
+									alt="Christeyns"
+									height={30}
+									className="mx-auto"
+								/>
+							</div>
+						</Slider>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -25,7 +25,7 @@ const Header = () => {
 	);
 
 	return (
-		<section id="home" className="mt-10">
+		<section id="home" className="mt-10 px-4 md:px-0 scroll-mt-28">
 			<div className="mx-auto container py-24 rounded-xl flex items-center justify-center overflow-hidden bg-gradient-to-r from-luke-dark-blue to-luke-light-blue">
 				<div className="z-10 text-center text-white max-w-4xl px-4">
 					<h1 className="font-bold text-5xl md:text-6xl lg:text-8xl mb-6">
