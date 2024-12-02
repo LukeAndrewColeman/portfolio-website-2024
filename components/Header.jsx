@@ -25,26 +25,29 @@ const Header = () => {
 	);
 
 	return (
-		<section id="home" className="mt-10 px-4 md:px-0 scroll-mt-28">
-			<div className="mx-auto container py-24 rounded-xl flex items-center justify-center overflow-hidden bg-gradient-to-r from-luke-dark-blue to-luke-light-blue">
-				<div className="z-10 text-center text-white max-w-4xl px-4">
-					<h1 className="font-bold text-5xl md:text-6xl lg:text-8xl mb-6">
-						Full Stack Web Developer
-					</h1>
-					<p className="text-lg md:text-xl lg:text-2xl mb-8">
-						Hi, I'm Luke Andrew Coleman, a dedicated web developer
-						from Bradford, West Yorkshire, with a passion for
-						creating innovative and impactful digital experiences.
-					</p>
-					<div className="flex gap-6 justify-center items-center">
-						{socialLinks.map(({ Icon, href, label }) => (
-							<SocialIcon
-								key={label}
-								Icon={Icon}
-								href={href}
-								label={label}
-							/>
-						))}
+		<section id="home" className="scroll-mt-28 text-white">
+			<div className="hero min-h-[95vh] bg-gradient-to-r from-luke-dark-blue to-luke-light-blue rounded-b-lg">
+				<div className="hero-content text-center">
+					<div className="max-w-4xl">
+						<h1 className="text-5xl md:text-6xl lg:text-8xl font-bold">
+							Full Stack Web Developer
+						</h1>
+						<p className="py-6 text-lg md:text-xl lg:text-2xl">
+							Hi, I'm Luke Andrew Coleman, a dedicated web
+							developer from Bradford, West Yorkshire, with a
+							passion for creating innovative and impactful
+							digital experiences.
+						</p>
+						<div className="flex gap-6 justify-center items-center">
+							{socialLinks.map(({ Icon, href, label }) => (
+								<SocialIcon
+									key={label}
+									Icon={Icon}
+									href={href}
+									label={label}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>

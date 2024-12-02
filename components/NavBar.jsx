@@ -1,35 +1,120 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
+	// Add state to track scroll position
+	const [showScrollButton, setShowScrollButton] = useState(false);
+
+	// Add scroll event listener
+	useEffect(() => {
+		const handleScroll = () => {
+			// Show button when user scrolls down 300px
+			setShowScrollButton(window.scrollY > 300);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	// Scroll to top function
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	return (
-		<div className="z-50 bg-luke-blue flex sticky top-0 w-full shadow-lg bg-[#fffffe] py-4">
-			<div className="container mx-auto flex flex-col lg:flex-row lg:justify-between items-center">
-				<p className="text-xl font-thin tracking-tight">
-					<span className="font-bold text-luke-dark-blue">LUKE</span>{" "}
-					A COLEMAN
-				</p>
-				<nav className="mt-1 lg:mt-0">
-					<ul className="flex gap-5 lg:gap-10">
-						<li className="hover:text-luke-green duration-300 font-semibold">
-							<a href="#home">Home</a>
+		<div className="shadow-lg bg-white sticky top-0 z-50 rounded-b-lg">
+			<div className="navbar container mx-auto">
+				<div className="navbar-start">
+					<div className="dropdown">
+						<div
+							tabIndex={0}
+							role="button"
+							className="btn btn-ghost lg:hidden"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-5 w-5"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M4 6h16M4 12h8m-8 6h16"
+								/>
+							</svg>
+						</div>
+						<ul
+							tabIndex={0}
+							className="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-52 p-2 shadow"
+						>
+							<li>
+								<Link href="#home">Home</Link>
+							</li>
+							<li>
+								<Link href="#projects">Projects</Link>
+							</li>
+							<li>
+								<Link href="#work">Work</Link>
+							</li>
+						</ul>
+					</div>
+					<a className="text-xl">
+						<span className="font-bold">LUKE </span>A COLEMAN
+					</a>
+				</div>
+				<div className="navbar-center hidden lg:flex">
+					<ul className="menu menu-horizontal px-1 text-base">
+						<li>
+							<Link href="#home">Home</Link>
 						</li>
-						<li className="hover:text-luke-green duration-300 font-semibold">
-							<a href="#projects">Projects</a>
+						<li>
+							<Link href="#projects">Projects</Link>
 						</li>
-						<li className="hover:text-luke-green duration-300 font-semibold">
-							<a href="#work">Work</a>
+						<li>
+							<Link href="#work">Work</Link>
 						</li>
 					</ul>
-				</nav>
-				<a
-					href="mailto:lukecoleman123@gmail.com"
-					className="hidden lg:block"
-				>
-					<button className="py-2 px-6 bg-luke-green hover:bg-luke-hover rounded-3xl font-bold shadow text-white transition-all duration-300">
+				</div>
+				<div className="navbar-end">
+					<Link
+						href="mailto:lukecoleman123@gmail.com"
+						className="py-2 px-6 bg-luke-green hover:bg-luke-hover transition-colors duration-300 text-white font-bold rounded-3xl shadow cursor-pointer"
+					>
 						Contact Me
-					</button>
-				</a>
+					</Link>
+				</div>
 			</div>
+			{/* Scroll to top button */}
+			{showScrollButton && (
+				<button
+					onClick={scrollToTop}
+					className="fixed bottom-8 right-8 p-4 bg-luke-green hover:bg-luke-hover text-white rounded-full shadow-lg transition-all duration-300 z-50"
+					aria-label="Scroll to top"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						className="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth={2}
+							d="M5 10l7-7m0 0l7 7m-7-7v18"
+						/>
+					</svg>
+				</button>
+			)}
 		</div>
 	);
 };

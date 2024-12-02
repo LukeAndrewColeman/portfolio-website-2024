@@ -39,52 +39,79 @@ const Projects = () => {
 	];
 
 	return (
-		<section id="projects" className="py-20 scroll-mt-20">
+		<section
+			id="projects"
+			className="py-24 scroll-mt-20 bg-gradient-to-b from-transparent to-luke-light-blue/5"
+		>
 			<div className="container mx-auto px-4 relative z-10">
-				<h2 className="text-4xl font-bold text-center mb-16 text-luke-light-blue tracking-tight">
-					Personal Projects
+				<h2 className="text-5xl font-bold text-center mb-20 text-luke-light-blue tracking-tight">
+					Featured Projects
 				</h2>
-				<div class="flex gap-6 flex-wrap justify-center">
-					{projects.map((project, index) => {
-						return (
-							<div className="bg-white rounded-md shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl group flex flex-col max-w-[400px]">
-								<div className="relative h-48">
+				<div className="space-y-24 max-w-7xl mx-auto">
+					{projects.map((project, index) => (
+						<div
+							key={index}
+							className="flex flex-col lg:flex-row lg:gap-8 items-center animate-fade-in"
+							style={{ animationDelay: `${index * 200}ms` }}
+						>
+							{/* Image Container */}
+							<div
+								className={`w-full lg:w-3/5 ${
+									index % 2 === 1 ? "lg:order-2" : ""
+								}`}
+							>
+								<div className="relative aspect-video rounded-lg overflow-hidden">
 									<Image
 										src={project.image}
 										alt={project.title}
-										layout="fill"
+										fill
+										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw"
+										className="object-cover rounded-lg"
+										priority={index === 0}
 									/>
 								</div>
-								<div className="p-6 flex flex-col flex-grow overflow-auto bg-luke-light-blue bg-opacity-10">
-									<div className="flex gap-4 justify-between">
-										<h3 className="text-2xl font-bold mb-3 text-luke-light-blue">
+							</div>
+
+							{/* Content Container */}
+							<div
+								className={`w-full lg:w-2/5 ${
+									index % 2 === 1 ? "lg:order-1" : ""
+								}`}
+							>
+								<div className="bg-white/80 backdrop-blur-sm dark:bg-luke-light-blue/5 p-8 rounded-xl shadow-lg">
+									<div className="flex items-start justify-between mb-4">
+										<h3 className="text-3xl font-bold text-luke-light-blue">
 											{project.title}
 										</h3>
-										<div className="flex gap-2">
+										<div className="flex gap-3">
 											<Link
 												href={project.github}
 												target="_blank"
 												rel="noopener noreferrer"
+												className="hover:scale-110 transition-transform duration-200"
+												aria-label={`GitHub repository for ${project.title}`}
 											>
-												<Github className="w-8 h-8 text-luke-light-blue bg-luke-light-blue bg-opacity-10 rounded-full p-2 hover:bg-luke-light-blue hover:text-white transition-colors duration-300" />
+												<Github className="w-6 h-6 text-luke-light-blue" />
 											</Link>
 											<Link
 												href={project.link}
 												target="_blank"
 												rel="noopener noreferrer"
+												className="hover:scale-110 transition-transform duration-200"
+												aria-label={`Visit ${project.title} website`}
 											>
-												<ExternalLink className="w-8 h-8 text-luke-light-blue bg-luke-light-blue bg-opacity-10 rounded-full p-2 hover:bg-luke-light-blue hover:text-white transition-colors duration-300" />
+												<ExternalLink className="w-6 h-6 text-luke-light-blue" />
 											</Link>
 										</div>
 									</div>
-									<p className="text-luke-dark-blue mb-4">
+									<p className="text-luke-dark-blue/80 mb-6 leading-relaxed">
 										{project.description}
 									</p>
-									<div className="flex flex-wrap gap-2 mt-auto pt-4">
+									<div className="flex flex-wrap gap-2 pt-4 border-t border-luke-light-blue/10">
 										{project.technologies.map((tech, i) => (
 											<span
 												key={i}
-												className="bg-luke-green bg-opacity-10 text-luke-green px-3 py-1 rounded-full text-xs font-medium"
+												className="bg-luke-green/10 text-luke-green px-4 py-1.5 rounded-full text-sm font-medium"
 											>
 												{tech}
 											</span>
@@ -92,8 +119,8 @@ const Projects = () => {
 									</div>
 								</div>
 							</div>
-						);
-					})}
+						</div>
+					))}
 				</div>
 			</div>
 		</section>
