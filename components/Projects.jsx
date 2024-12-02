@@ -78,7 +78,7 @@ const Projects = () => {
 									index % 2 === 1 ? "lg:order-1" : ""
 								}`}
 							>
-								<div className="bg-white/80 backdrop-blur-sm dark:bg-luke-light-blue/5 p-8 rounded-xl shadow-lg">
+								<div className="p-8">
 									<div className="flex items-start justify-between mb-4">
 										<h3 className="text-3xl font-bold text-luke-light-blue">
 											{project.title}
