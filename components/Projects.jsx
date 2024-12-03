@@ -5,7 +5,7 @@ import recipeImage from "@/public/recipehub.png";
 import codeSnippetsImage from "@/public/codesnippets-new.png";
 import todoImage from "@/public/todoapp.png";
 import Link from "next/link";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, LinkIcon } from "lucide-react";
 
 const Projects = () => {
 	const projects = [
@@ -88,7 +88,7 @@ const Projects = () => {
 							>
 								<div className="p-8">
 									<div className="flex items-start justify-between mb-4">
-										<h3 className="text-3xl font-bold text-luke-light-blue">
+										<h3 className="text-2xl font-bold text-luke-light-blue">
 											{project.title}
 										</h3>
 										<div className="flex gap-3">
@@ -96,19 +96,19 @@ const Projects = () => {
 												href={project.github}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="p-2 bg-luke-light-blue/5 hover:bg-luke-light-blue/10 transition-all duration-200 rounded-full"
+												className="p-2 hover:bg-luke-light-blue/10 transition-all duration-200 rounded-full text-luke-green text-sm font-semibold underline"
 												aria-label={`GitHub repository for ${project.title}`}
 											>
-												<Github className="w-6 h-6 text-luke-light-blue" />
+												View Code
 											</Link>
 											<Link
 												href={project.link}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="p-2 rounded-full bg-luke-light-blue/5 hover:bg-luke-light-blue/10 transition-all duration-200"
+												className="p-2 hover:bg-luke-light-blue/10 transition-all duration-200 rounded-full text-luke-green text-sm font-semibold underline"
 												aria-label={`Visit ${project.title} website`}
 											>
-												<ExternalLink className="w-6 h-6 text-luke-light-blue" />
+												Visit Site
 											</Link>
 										</div>
 									</div>
