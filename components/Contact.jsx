@@ -7,7 +7,7 @@ const Contact = () => {
 			className="pt-10 pb-20 text-white relative overflow-hidden bg-luke-white"
 		>
 			<div className="shadow max-w-[800px] py-10 bg-gradient-to-r from-luke-dark-blue to-luke-light-blue mx-8 md:mx-auto flex flex-col items-center rounded-xl relative z-10">
-				<h2 className="text-4xl font-bold mb-6 text-center">
+				<h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
 					Contact Me
 				</h2>
 				<p className="w-[80%] text-center mx-auto">

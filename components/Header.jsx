@@ -24,6 +24,18 @@ const Header = () => {
 		[]
 	);
 
+	const SocialIcon = ({ Icon, href, label }) => (
+		<a
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label={label}
+			className="text-white hover:text-luke-green transition-colors duration-300 shadow"
+		>
+			<Icon className="w-6 h-6" />
+		</a>
+	);
+
 	return (
 		<section id="home" className="scroll-mt-28 text-white">
 			<div className="hero min-h-[95vh] bg-gradient-to-r from-luke-dark-blue to-luke-light-blue rounded-b-lg">
@@ -32,7 +44,7 @@ const Header = () => {
 						<h1 className="text-5xl md:text-6xl lg:text-8xl font-bold">
 							Full Stack Web Developer
 						</h1>
-						<p className="py-6 text-lg md:text-xl lg:text-2xl">
+						<p className="py-6 text-lg md:text-base lg:text-xl max-w-xl mx-auto">
 							Hi, I'm Luke Andrew Coleman, a dedicated web
 							developer from Bradford, West Yorkshire, with a
 							passion for creating innovative and impactful
@@ -54,17 +66,5 @@ const Header = () => {
 		</section>
 	);
 };
-
-const SocialIcon = ({ Icon, href, label }) => (
-	<a
-		href={href}
-		target="_blank"
-		rel="noopener noreferrer"
-		aria-label={label}
-		className="text-white hover:text-luke-green transition-colors duration-300 shadow"
-	>
-		<Icon className="w-8 h-8" />
-	</a>
-);
 
 export default Header;

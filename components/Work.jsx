@@ -35,7 +35,7 @@ const Work = () => {
 	return (
 		<section id="work" className="scroll-mt-40">
 			<div className="container mx-auto my-20 px-10 lg:px-32 relative z-10">
-				<h2 className="text-4xl font-bold mb-10 text-center text-luke-light-blue">
+				<h2 className="text-4xl md:text-5xl font-bold mb-10 text-center text-luke-light-blue">
 					Work Experience
 				</h2>
 				<ol className="max-w-[90%] mx-auto relative border-s border-luke-light-blue text-luke-dark-blue">

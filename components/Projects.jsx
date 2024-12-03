@@ -12,28 +12,28 @@ const Projects = () => {
 		{
 			title: "Code Snippets",
 			description:
-				"Code Snippets is a website that provides a way of organising all your code snippets for various programming languages. The website is hosted on a vps with coolify and has a MySQL database.",
+				"Code Snippets is a website that provides a way of organising all your code snippets for various programming languages. The website features a clean and intuitive interface where users can create, edit and delete code snippets. Each snippet can be categorized by programming language and tagged for easy searching. The website includes syntax highlighting for better code readability and a copy-to-clipboard functionality for quick access. The website is hosted on a VPS with Coolify and uses a MySQL database for reliable data storage and retrieval.",
 			image: codeSnippetsImage,
 			technologies: ["NextJS", "Tailwind", "Prisma", "MySQL"],
-			link: "https://codesnippets.lukeacoleman.com/",
+			link: "https://codesnippets.lukeacoleman.com",
 			github: "https://github.com/LukeAndrewColeman/code-snippets-nextjs",
 		},
 		{
 			title: "Recipe Hub",
 			description:
-				"Recipe Hub is a website that provides a way of organising all your recipes, which can be filtered and organised by cuisine. The website is hosted on a shared sever.",
+				"Recipe Hub is a website that provides a way of organizing all your recipes, which can be filtered and organized by cuisine. The website features a clean and intuitive interface where users can create, edit and delete recipes. Each recipe includes detailed ingredients, step-by-step instructions, cooking times, and difficulty levels. Users can also categorize recipes by meal type, dietary restrictions, and cooking method. The website is hosted on a shared server and uses Craft CMS for content management.",
 			image: recipeImage,
 			technologies: ["Craft CMS", "JavaScript", "Twig", "Tailwind"],
-			link: "https://recipeapp.lukeacoleman.com/",
+			link: "https://recipeapp.lukeacoleman.com",
 			github: "https://github.com/LukeAndrewColeman/recipeapp",
 		},
 		{
 			title: "Todo App",
 			description:
-				"Todo App is a JavaScript application that helps users organize their to-do lists. The app allows users to create, filter, mark as complete, and delete todos.",
+				"Todo App is a JavaScript application that helps users organize their daily tasks and to-do lists. The app provides a clean and intuitive interface where users can create new tasks, filter them by status, mark items as complete, and delete completed tasks. It features local storage functionality to persist todos between sessions, ensuring users never lose their task lists. The minimalist design focuses on usability while maintaining a modern aesthetic.",
 			image: todoImage,
 			technologies: ["HTML & CSS", "JavaScript", "GitHub Pages"],
-			link: "https://lukeandrewcoleman.github.io/Todo-List/",
+			link: "https://lukeandrewcoleman.github.io/Todo-List",
 			github: "https://github.com/LukeAndrewColeman/Todo-List",
 		},
 	];
@@ -44,15 +44,14 @@ const Projects = () => {
 			className="py-24 scroll-mt-20 bg-gradient-to-b from-transparent to-luke-light-blue/5"
 		>
 			<div className="container mx-auto px-4 relative z-10">
-				<h2 className="text-5xl font-bold text-center mb-20 text-luke-light-blue tracking-tight">
+				<h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-luke-light-blue tracking-tight">
 					Featured Projects
 				</h2>
 				<div className="space-y-24 max-w-7xl mx-auto">
 					{projects.map((project, index) => (
 						<div
 							key={index}
-							className="flex flex-col lg:flex-row lg:gap-8 items-center animate-fade-in"
-							style={{ animationDelay: `${index * 200}ms` }}
+							className="flex flex-col lg:flex-row lg:gap-8 items-center"
 						>
 							{/* Image Container */}
 							<div
@@ -60,15 +59,24 @@ const Projects = () => {
 									index % 2 === 1 ? "lg:order-2" : ""
 								}`}
 							>
-								<div className="relative aspect-video rounded-lg overflow-hidden">
-									<Image
-										src={project.image}
-										alt={project.title}
-										fill
-										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw"
-										className="object-cover rounded-lg"
-										priority={index === 0}
-									/>
+								<div className="mockup-browser border-gray-200 border">
+									<div className="mockup-browser-toolbar">
+										<div className="input !bg-white border-gray-200 border">
+											{project.link}
+										</div>
+									</div>
+									<div className="border-gray-200 border-t relative">
+										<div className="relative aspect-video rounded-lg overflow-hidden">
+											<Image
+												src={project.image}
+												alt={project.title}
+												fill
+												sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw"
+												className="object-cover rounded-lg"
+												priority={index === 0}
+											/>
+										</div>
+									</div>
 								</div>
 							</div>
 
@@ -88,7 +96,7 @@ const Projects = () => {
 												href={project.github}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="hover:scale-110 transition-transform duration-200"
+												className="p-2 bg-luke-light-blue/5 hover:bg-luke-light-blue/10 transition-all duration-200 rounded-full"
 												aria-label={`GitHub repository for ${project.title}`}
 											>
 												<Github className="w-6 h-6 text-luke-light-blue" />
@@ -97,7 +105,7 @@ const Projects = () => {
 												href={project.link}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="hover:scale-110 transition-transform duration-200"
+												className="p-2 rounded-full bg-luke-light-blue/5 hover:bg-luke-light-blue/10 transition-all duration-200"
 												aria-label={`Visit ${project.title} website`}
 											>
 												<ExternalLink className="w-6 h-6 text-luke-light-blue" />
@@ -107,7 +115,7 @@ const Projects = () => {
 									<p className="text-luke-dark-blue/80 mb-6 leading-relaxed">
 										{project.description}
 									</p>
-									<div className="flex flex-wrap gap-2 pt-4 border-t border-luke-light-blue/10">
+									<div className="flex flex-wrap gap-2 pt-4">
 										{project.technologies.map((tech, i) => (
 											<span
 												key={i}
