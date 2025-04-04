@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const Navbar = () => {
 	// Add state to track scroll position
@@ -27,7 +28,12 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="shadow-lg bg-white sticky top-0 z-50 rounded-b-lg">
+		<motion.div
+			initial={{ opacity: 0, y: -20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5 }}
+			className="shadow-lg bg-white sticky top-0 z-50 rounded-b-lg"
+		>
 			<div className="navbar container mx-auto">
 				<div className="navbar-start">
 					<div className="dropdown">
@@ -83,14 +89,19 @@ const Navbar = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="navbar-end">
+				<motion.div
+					initial={{ rotate: 0 }}
+					whileHover={{ rotate: -1 }}
+					transition={{ duration: 0.5 }}
+					className="navbar-end"
+				>
 					<Link
 						href="mailto:lukecoleman123@gmail.com"
 						className="py-2 px-6 bg-luke-green hover:bg-luke-hover transition-colors duration-300 text-white font-bold rounded-3xl shadow cursor-pointer"
 					>
 						Contact Me
 					</Link>
-				</div>
+				</motion.div>
 			</div>
 			{/* Scroll to top button */}
 			{showScrollButton && (
@@ -115,7 +126,7 @@ const Navbar = () => {
 					</svg>
 				</button>
 			)}
-		</div>
+		</motion.div>
 	);
 };
 

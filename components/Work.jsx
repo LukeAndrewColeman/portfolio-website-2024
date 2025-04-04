@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 
 const workExperience = [
 	{
@@ -42,9 +45,15 @@ const Work = () => {
 					{workExperience.map((job, index) => (
 						<li key={index} className="mb-10 ms-4">
 							<div className="absolute w-3 h-3 bg-luke-green rounded-full mt-1.5 -start-1.5 border border-luke-green"></div>
-							<h3 className="text-lg font-semibold text-luke-light-blue">
+							<motion.h3
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.5, delay: 0.3 }}
+								viewport={{ once: true }}
+								className="text-lg font-semibold text-luke-light-blue"
+							>
 								{job.title} - {job.company}
-							</h3>
+							</motion.h3>
 							<time className="mb-1 text-sm text-luke-green">
 								{job.period}
 							</time>

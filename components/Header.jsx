@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { motion } from "motion/react";
 
 const Header = () => {
 	const socialLinks = useMemo(
@@ -30,9 +31,9 @@ const Header = () => {
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label={label}
-			className="text-white hover:text-luke-green transition-colors duration-300 shadow"
+			className="text-white hover:text-luke-green hover:-translate-y-[2px] transition-all duration-300 shadow"
 		>
-			<Icon className="w-6 h-6" />
+			<Icon className="w-8 h-8" />
 		</a>
 	);
 
@@ -41,16 +42,31 @@ const Header = () => {
 			<div className="hero min-h-[95vh] bg-gradient-to-r from-luke-dark-blue to-luke-light-blue rounded-b-lg">
 				<div className="hero-content text-center">
 					<div className="max-w-4xl">
-						<h1 className="text-5xl md:text-6xl lg:text-8xl font-bold">
+						<motion.h1
+							initial={{ opacity: 0, y: -20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.5 }}
+							className="text-5xl md:text-6xl lg:text-8xl font-bold"
+						>
 							Full Stack Web Developer
-						</h1>
-						<p className="py-6 text-lg md:text-base lg:text-xl max-w-xl mx-auto">
+						</motion.h1>
+						<motion.p
+							initial={{ opacity: 0, y: -20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 1 }}
+							className="py-6 text-lg md:text-base lg:text-xl max-w-xl mx-auto"
+						>
 							Hi, I'm Luke Andrew Coleman, a dedicated web
 							developer from Bradford, West Yorkshire, with a
 							passion for creating innovative and impactful
 							digital experiences.
-						</p>
-						<div className="flex gap-6 justify-center items-center">
+						</motion.p>
+						<motion.div
+							initial={{ opacity: 0, y: -20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 1.5 }}
+							className="flex gap-6 justify-center items-center"
+						>
 							{socialLinks.map(({ Icon, href, label }) => (
 								<SocialIcon
 									key={label}
@@ -59,7 +75,7 @@ const Header = () => {
 									label={label}
 								/>
 							))}
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

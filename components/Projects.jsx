@@ -3,12 +3,22 @@ import React from "react";
 import Image from "next/image";
 import recipeImage from "@/public/recipehub.png";
 import codeSnippetsImage from "@/public/codesnippets-new.png";
+import smartRecipeImage from "@/public/smartrecipeai.jpeg";
 import todoImage from "@/public/todoapp.png";
 import Link from "next/link";
-import { Github, LinkIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 const Projects = () => {
 	const projects = [
+		{
+			title: "SmartRecipe AI",
+			description:
+				"SmartRecipe AI is a website that uses AI to generate recipes based on a selected cuisine. The website features a clean and intuitive interface where users can generate recipes by selecting a cuisine, the website uses Google Gemini to generate the recipes. The website is hosted on a VPS with Coolify and uses Appwrite for reliable data storage and authentication.",
+			image: smartRecipeImage,
+			technologies: ["NextJS", "Tailwind", "Appwrite", "Google Gemini"],
+			link: "https://smartrecipeai.com",
+			github: "https://github.com/LukeAndrewColeman/ai-recipe-app",
+		},
 		{
 			title: "Code Snippets",
 			description:
@@ -54,12 +64,16 @@ const Projects = () => {
 							className="flex flex-col lg:flex-row lg:gap-8 items-center"
 						>
 							{/* Image Container */}
-							<div
-								className={`w-full lg:w-3/5 ${
+							<motion.div
+								initial={{ opacity: 0, y: 20, rotate: 10 }}
+								whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+								transition={{ duration: 0.5, delay: 0.2 }}
+								viewport={{ once: true }}
+								className={`w-full lg:w-3/5 shadow-lg rounded-lg overflow-hidden origin-left ${
 									index % 2 === 1 ? "lg:order-2" : ""
 								}`}
 							>
-								<div className="mockup-browser border-gray-200 border">
+								<div className="mockup-browser border-gray-200 border shadow-lg rounded-lg overflow-hidden">
 									<div className="mockup-browser-toolbar">
 										<div className="input !bg-white border-gray-200 border">
 											{project.link}
@@ -78,7 +92,7 @@ const Projects = () => {
 										</div>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 
 							{/* Content Container */}
 							<div
